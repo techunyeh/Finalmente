@@ -7,7 +7,9 @@ A.  Explain what recursion is and when it is useful.
 
     Explain what the |termination step| and |recursion step| are in a recursive method.
     
-    Termination step: the first step of the loop when the recursion stops.
+    Termination step: It is end of executing after particular time
+    
+    Recursion step - method calls upon itself  to create a loop that calls itself.
     
     
 B.  Describe the difference between a Queue and a Stack.

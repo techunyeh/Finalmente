@@ -1,14 +1,64 @@
 2222222222222
 
 A.  Explain what recursion is and when it is useful.
-    Explain what the |termination step| and |recursion step| are in a recursive method.
 
+    Recursion is the function that it calls itself to keep computing a variable, it is useful to save lines, especially
+    in mathematical sequences.
+
+    Explain what the |termination step| and |recursion step| are in a recursive method.
+    
+    Termination step: the first step of the loop when the recursion stops.
+    
+    
 B.  Describe the difference between a Queue and a Stack.
+
+The last object added in a Stack will be dealt with first(LIFO), whereas the first object added of a queue
+will be the first to deal with(FIFO).
 
 C.  Write a class for an element of a doublely-linked list.
 
+public class DLnkList{
+  private DLnk head = new DLnk();
+    public int length = 0;
+    
+    public DLnkList(){}
+        public void addDLnk(DLnk newlink){
+            newlink.setNext(this.head);
+            this.head.setPrev(newlink);
+            this.head=newlink;
+            length=length + 1;}
+                
+    public DLnk getiLnk(int i){
+        DLnk it = this.head;
+        while(i>0){
+        it=it.getNext();
+        i=i-1;}
+        return it;}
+                  
+    public void removeHead(){
+        this.head=this.head.getNext();
+        this.head.setPrev(null);
+        length = length -1;}
+                  
+    public DLnk getHead(){
+        return this.head;}
+                   
+}
+
 D.  Explain what a Merkle Tree is.  
+    
+    Merkle tree is a kind of binary tree which merges tons of hash codes into one hash.
+    
     Describe the structure and purpose of a Merkle Tree.
+    
+    The structure is just like a binary tree. But in a merkle tree every node it based upon the one coming after it. 
+    It is build from down to up. Its prupose is to hold many informations which are needed to verify a document.
+    
     What is the Merkle root?
+    
+    Merkle root is the element at the top of the tree.
+    
     What is the function of a certificate in this data structure?
+    
+    It will return the root and any node it needed to veryify a given document which was used to build the tree.
     
